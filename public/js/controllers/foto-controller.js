@@ -20,6 +20,7 @@ angular.module('alurapic').controller('FotoController', function($scope, recurso
     .then(function(dados){
       $scope.mensagem = dados.mensagem;
       if(dados.inclusao) $scope.foto = {};
+      $scope.focado = true; //novidade
       $scope.formulario.$setPristine();
       $scope.formulario.$setUntouched();
       //colocar codigo de limpeza de form pristine

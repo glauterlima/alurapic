@@ -34,6 +34,30 @@ angular.module('minhasDiretivas', [])
 
   })
 
+  .directive('meuFocus', function(){
+
+    var ddo = {};
+
+    ddo.restrict = "A";
+
+    ddo.scope = {
+      focado : '='
+    };
+
+    ddo.link = function(scope, element){
+      //quero observar qualquer mudança em 'focado'
+      scope.$watch('focado', function() {
+        if(scope.focado){
+          element[0].focus();
+          scope.focado = false;
+        }
+    });
+  };
+
+    return ddo;
+
+  })
+
 
   .directive('minhaFoto', function(){
 
